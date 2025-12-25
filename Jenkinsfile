@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'maven'
+    }
     stages {
         stage('Checkout Source Code') {
             when {
@@ -17,9 +20,8 @@ pipeline {
             }
             steps {
                 echo "Java unit testleri çalıştırılıyor..."
-                sh 'chmod +x ./mvnw'
-                sh './mvnw -v'
-                sh './mvnw clean test'
+                sh 'mvn -v'
+                sh 'mvn clean test'
             }
         }
 
@@ -43,4 +45,3 @@ pipeline {
         }
     }
 }
-
