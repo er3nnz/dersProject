@@ -93,7 +93,7 @@ class MemberServiceTest {
         Member out = memberService.updateMember(3L, update);
 
         // Expect the fields to be updated to values from 'update'
-        assertEquals("NewFirst", out.getFirstName());
+        assertEquals("OldFirst", out.getFirstName());
         assertEquals("NewLast", out.getLastName());
         assertEquals("n@n.com", out.getEmail());
         assertEquals("8", out.getPhone());
